@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { FruitContainer } from "../../components/Styled";
 
 const FruitsPage = () => {
   const fruits = useSelector((state) => state.fruits);
@@ -6,10 +7,10 @@ const FruitsPage = () => {
   return (
     <div>
       {fruits.map((fruit) => (
-        <div key={fruit.name}>
+        <FruitContainer key={fruit.name}>
           <p>{fruit.name}</p>
           <img src={fruit.image} alt={fruit.name} />
-        </div>
+        </FruitContainer>
       ))}
     </div>
   );
